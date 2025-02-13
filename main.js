@@ -1,247 +1,101 @@
-// const a = 10;
+// let obj = {
+//     name: "Max",
+//     age: 18,
+//     city: "Tomsk"
+// };
 //
-// if (a === 2 || 3) {
-//     console.log(-1);
-// }
+// obj.gender = "male";
 //
-// if (a === 2 || a === 3) {
-//     console.log(0);
-// }
+// obj["eye-color"] = "green";
 //
-// if (10 % 1) {
-//     console.log(1); //1
-// }
+// delete obj.gender;
+// delete obj["eye-color"];
 //
-// if (10 % 0) {
-//     console.log(2);
-// } else if (10) {
-//     console.log(3); //3
-// } else if (true) {
-//     console.log(4);
-// }
+// obj.father = {
+//     name: "Stas",
+//     age: "40"
+// };
 //
-// let g = '';
+// obj.father.gender = "male";
 //
-// if (g) {
-//     console.log(5);
-// } else {
-//     console.log(6); //6
-// }
+// obj.father.age = "41";
 //
-// if (undefined) {
-//     console.log(7);
-// }
+// let moreName = "Pppov";
+// let surname = "Popov";
+// obj[moreName] = surname;
 //
-// if ('0') {
-//     console.log(8); //8
-// } else if ('') {
-//     console.log(9);
-// } else {
-//     console.log('a');
-// }
+// let name = "Anton";
+// let age = 20;
+// let city = "Moscow";
 //
-// if (!'0') {
-//     console.log('b');
-// } else {
-//     console.log('c'); //c
-// }
+// let newObj = { name, age, city };
 //
-// if (!!'' || !!0 || !!1) {
-//     console.log('d'); //d
-// }
-//
-// if (undefined || false || '' || 0) {
-//     console.log('e');
-// } else if (!false && (0 || '0')) {
-//     console.log('f'); //f
-// } else {
-//     console.log('g');
-// }
-//
-// const a = 0;
-// const b = 1;
-// let c;
-//
-// console.log(a == '0' ? 'h' : 'i'); //h
-// console.log(!(a > b) ? 'j' : 'k'); //j
-// console.log(0 ? 'l' : 'm'); //m
-// console.log(!0 ? 'n' : 'o'); //n
-// console.log((null === undefined || 11 % 5) && (a > b || !!true) ? 'n' : 'o'); //n
-//
-// console.log('abc' == 'ABC' ? 'p' : 'q'); //q
-// console.log('false' ? 'r' : 's'); //r
-// console.log('false' == false ? 't' : 'u'); //t
-// console.log(Number('one') ? 'v' : 'w'); //v
-// console.log(c ? 'x' : 'y'); //y
-// console.log(null == undefined ? 'z' : '🫡'); //z
-//
-//
-// Положительное или нет
-// let a = 1;
-// if (a > 0){
-//     console.log('Число положительное');
-// }
-// else if (a < 0){
-//     console.log('Число отрицательное')
-// }
-// else {
-//     console.log('Это ноль')
-// }
+// console.log(obj);
+// console.log(newObj);
 
 
-//Простые условия. Два числа
-// let a = 5;
-// let b = 10;
-// if (a === b) {
-//     console.log('Числа равны');
-// }
-// else {
-//     console.log('Числа не равны')
-// }
-//
-// let num1 = a.toString().length;
-// let num2 = b.toString().length;
-// if (num1 === num2) {
-//     console.log(`В числах одинаковое кол-во символов`)
-// }
-// else {
-//     console.log(`В числах разное кол-во символов`)
-// }
-//
-// if (a > b) {
-//     console.log(`${a} больше чем ${b}`)
-// }
-// else {console.log(`${b} больше чем ${a}`)}
-//
-// if (a > b) {
-//     console.log(`${b} меньше чем ${a}`)
-// }
-// else {console.log(`${a} меньше чем ${b}`)}
-//
-// if (a % b === 0) {
-//     console.log(`${a} делится на ${b} без остатка`)
-// }
-// else {
-//     console.log(`${a} не делится на ${b} без остатка`)
-// }
-//
-// if (b % a === 0) {
-//     console.log(`${b} делится на ${a} без остатка`)
-// }
-// else {
-//     console.log(`${b} не делится на ${a} без остатка`)
-// }
+const alex = {
+    name: 'Alex',
+    dateOfBirth: new Date('2024-05-15'),
+};
+
+const jake = {
+    name: 'Jake',
+    dateOfBirth: new Date('1970-01-01T00:00:00.000Z'),
+};
+
+const john = {
+    name: 'John',
+    dateOfBirth: new Date('2007-12-30T11:32:59.953+03:00'),
+};
+
+const bob = {
+    name: 'Bob',
+    dateOfBirth: new Date('2025-02-13T16:05:02.302Z'),
+};
 
 
-//Простые условия. Две строки.
-// let a = 'abc';
-// let b = 'dnc';
-// let firstSymbol1 = a.charAt(0);
-// let firstSymbol2 = b.charAt(0);
-// let lastSymbol1 = a.charAt(2);
-// let lastSymbol2 = b.charAt(2);
-//
-// if (firstSymbol1 === firstSymbol2) {
-//     console.log('Первые символы равны');
-// }
-// else {
-//     console.log('Первые символы не равны');
-// }
-//
-// if (lastSymbol1 === lastSymbol2) {
-//     console.log('Последние символы равны');
-// }
-// else {
-//     console.log('последние символы не равны');
-// }
-
-// let a = 12;
-//
-// if (a % 3 === 0 && a % 5 === 0) {
-//     console.log('FizzBuzz');
-// }
-// else if (a % 3 === 0) {
-//     console.log('Fizz');
-// }
-// else if (a % 5 === 0) {
-//     console.log('Buzz');
-// }
-
-//Определите роль
-// const role = 'manager';
-// let level;
-// switch (role) {
-//     case 'user':
-//     case 'client':
-//     level = 1;
-//     console.log(level);
-//     break;
-//
-//     case 'admin':
-//     case 'manager':
-//     level = 2;
-//     console.log(level);
-//     break;
-//
-//     case 'superadmin':
-//     level = 3;
-//     console.log(level);
-//     break;
-//
-//     default:
-//      level = 'неизвестен';
-//      console.log(level);
-// }
+const currentDate = new Date('2025-01-20'); // Программа была запущена 20 января 2025
 
 
-// const characterName = 'patrick';
-//
-// switch (characterName) {
-//     case 'spongebob':
-//         console.log('| ( · )( · ) |');
-//         break;
-//     case 'patrick':
-//         console.log('/ ( · )( · ) \\');
-//         break;
-//     case 'squidward':
-//         console.log('( ( · )( · ) )');
-//         break;
-//     case 'plankton':
-//         console.log('| ( · ) |');
-//         break;
-//     case 'mr. crabs':
-//         console.log('|·||·|');
-//         break;
-//     default:
-//         console.log('Персонаж не найден');
-// }
+alex.age = currentDate.getUTCFullYear() - alex.dateOfBirth.getUTCFullYear();
+if (
+    currentDate.getUTCMonth() < alex.dateOfBirth.getUTCMonth() ||
+    (currentDate.getUTCMonth() === alex.dateOfBirth.getUTCMonth() && currentDate.getUTCDate() < alex.dateOfBirth.getUTCDate())
+) {
+    alex.age--;
+}
+if (alex.age < 0) alex.age = 0;
 
+jake.age = currentDate.getUTCFullYear() - jake.dateOfBirth.getUTCFullYear();
+if (
+    currentDate.getUTCMonth() < jake.dateOfBirth.getUTCMonth() ||
+    (currentDate.getUTCMonth() === jake.dateOfBirth.getUTCMonth() && currentDate.getUTCDate() < jake.dateOfBirth.getUTCDate())
+) {
+    jake.age--;
+}
+if (jake.age < 0) jake.age = 0;
 
-//Маппер
-// const externalStatus = 'rejected';
-//
-// switch (externalStatus) {
-//     case 'approved':
-//         console.log('approved');
-//         break;
-//     case 'pending':
-//         console.log('pending');
-//         break;
-//     case 'moderation':
-//         console.log('pending');
-//         break;
-//     case 'waiting':
-//         console.log('pending');
-//         break;
-//     case 'declined':
-//         console.log('declined');
-//         break;
-//     case 'rejected':
-//         console.log('declined');
-//         break;
-//     case 'notaccepted':
-//         console.log('declined');
-//         break;
-//     default:
-//         console.log('pending');
-// }
+john.age = currentDate.getUTCFullYear() - john.dateOfBirth.getUTCFullYear();
+if (
+    currentDate.getUTCMonth() < john.dateOfBirth.getUTCMonth() ||
+    (currentDate.getUTCMonth() === john.dateOfBirth.getUTCMonth() && currentDate.getUTCDate() < john.dateOfBirth.getUTCDate())
+) {
+    john.age--;
+}
+if (john.age < 0) john.age = 0;  // Проверка для John
+
+bob.age = currentDate.getUTCFullYear() - bob.dateOfBirth.getUTCFullYear();
+if (
+    currentDate.getUTCMonth() < bob.dateOfBirth.getUTCMonth() ||
+    (currentDate.getUTCMonth() === bob.dateOfBirth.getUTCMonth() && currentDate.getUTCDate() < bob.dateOfBirth.getUTCDate())
+) {
+    bob.age--;
+}
+if (bob.age < 0) bob.age = 0;  // Проверка для Bob
+
+// Выводим результаты
+console.log(alex);
+console.log(jake);
+console.log(john);
+console.log(bob);
