@@ -1,101 +1,157 @@
-// let obj = {
-//     name: "Max",
-//     age: 18,
-//     city: "Tomsk"
-// };
+// //while 1
 //
-// obj.gender = "male";
+// let firstNum = Math.round(Math.random() * 6);
+// let secondNum = Math.round(Math.random() * 6);
+// let count = 0;
+// while (firstNum > secondNum || firstNum < secondNum) {
+//     console.log(`Первое число: ${firstNum} Второе число: ${secondNum}`);
+//     firstNum = Math.round(Math.random() * 6);
+//     secondNum = Math.round(Math.random() * 6);
+//     ++count;
+// }
+// console.log(`ДУБЛЬ ${firstNum}, ${secondNum}`);
+// console.log(`Попыток: ${count}`);
+
+// for 1
 //
-// obj["eye-color"] = "green";
+// let numbers = [1, -2, 3, -4, 5, 6];
+// let positiveCount = 0;
+// let negativeCount = 0;
 //
-// delete obj.gender;
-// delete obj["eye-color"];
+// for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > 0) {
+//         positiveCount++;
+//     } else if (numbers[i] < 0) {
+//         negativeCount++;
+//     }
+// }
+// console.log(`Количество положительных чисел: ${positiveCount}`);
+// console.log(`Количество отрицательных чисел: ${negativeCount}`);
+
+// for 2
+// let numbers = [1.1, 2.2, -2, 3.3, -1, 5.5, 5.99, 7.49, 7.9999, -2.2];
+// let positiveIndices = [];
+// for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > 0) {
+//         positiveIndices.push(i);
+//     }
+// }
+// for (let i = 0; i < positiveIndices.length - 3; i++) {
+//     let index = positiveIndices[i];
+//     numbers[index] = Math.round(numbers[index]);
+// }
+// console.log(numbers);
+
+// for 3
+// let strings = ['яблоко', 'грушв', 'ручка', 'книга', 'колесо'];
+// let start = Math.floor(strings.length / 2);
+// let secondHalf = strings.slice(start);
+// console.log(secondHalf);
+
+// for 4
+// for (let i = 1; i <= 5; i++) {
+//     let space = ' '.repeat(5 - i);
+//     let star = '*'.repeat(2 * i - 1);
+//     console.log(space + star);
+// }
+
+// for 5
+// const matrix = [
+//     ['Id', 'Title', 'Description'],
+//     [1, 'Title-1', 'Description-1'],
+//     [2, 'Title-2', 'Description-2'],
+//     [3, 'Title-3', 'Description-3', 'Поле с багом'],
+//     [4, 'Title-4', 'Description-4'],
+//     [5, 'Title-5', 'Description-5'],
+//     [6, 'Title-6', 'Description-6', 'Поле с багом'],
+// ];
 //
-// obj.father = {
-//     name: "Stas",
-//     age: "40"
-// };
+// let maxLength = 0;
+// for (let i = 0; i < matrix.length; i++) {
+//     if (matrix[i].length > maxLength) {
+//         maxLength = matrix[i].length;
+//     }
+// }
 //
-// obj.father.gender = "male";
+// for (let i = 0; i < matrix.length; i++) {
+//     let row = '';
+//     for (let j = 0; j < maxLength; j++) {
+//         let value = matrix[i][j] !== undefined ? matrix[i][j] : '';
+//         row += `${value}\t`;
+//     }
+//     console.log(row);
+// }
+
+//Подглядел
+// const size = potatoes.length;
+// const varieties = [];
+// let resultSum = null;
+// let resultPotatoes = [];
+// let resultDifference = null;
+// let resultVariety = null;
 //
-// obj.father.age = "41";
+// /* Решение
+// Для каждого вложенного цикла используем текущий индекс верхнего цикла, в таком случае,
+// если первый цикл взял 1ую картошку, то второй цикл возьмёт 2ую картошку, а третий цикл возьмёт 3ю картошку,
+// и таким образом нам не нужно руками контролировать, чтобы в каждую переменную записалась разная картошка.
+//  */
+// for (let idx1 = 0; idx1 < size; idx1++) {
+//     const potato1 = potatoes[idx1];
 //
-// let moreName = "Pppov";
-// let surname = "Popov";
-// obj[moreName] = surname;
+//     for (let idx2 = idx1 + 1; idx2 < size; idx2++) {
+//         const potato2 = potatoes[idx2];
 //
-// let name = "Anton";
-// let age = 20;
-// let city = "Moscow";
+//         for (let idx3 = idx2 + 1; idx3 < size; idx3++) {
+//             const potato3 = potatoes[idx3];
 //
-// let newObj = { name, age, city };
+//             // Вес для этих 3х картошек
+//             const sum = potato1.weight + potato2.weight + potato3.weight;
 //
-// console.log(obj);
-// console.log(newObj);
+//             // Точность для этих 3х картошек
+//             const difference = Math.abs(sum - targetWeight);
+//
+//             // Если результата ещё нет, или погрешность этих 3х картошек меньше запомненной - обновляем запомненные данные
+//             if (resultDifference === null || difference < resultDifference) {
+//                 resultSum = sum;
+//                 resultDifference = difference;
+//                 resultPotatoes = [potato1, potato2, potato3];
+//             }
+//         }
+//     }
+// }
+//
+// // Перебираем выбранные картошки и ищем превалирующий сорт
+// for (let i = 0; i < resultPotatoes.length; i++) {
+//     const variety = potatoes[i].variety;
+//
+//     if (varieties.includes(variety)) {
+//         // В массиве уже есть одна картошка такого сорта, значит эта вторая, значит этот сорт "победил"
+//         resultVariety = variety;
+//         break;
+//     }
+//
+//     varieties.push(variety);
+// }
 
 
-const alex = {
-    name: 'Alex',
-    dateOfBirth: new Date('2024-05-15'),
-};
-
-const jake = {
-    name: 'Jake',
-    dateOfBirth: new Date('1970-01-01T00:00:00.000Z'),
-};
-
-const john = {
-    name: 'John',
-    dateOfBirth: new Date('2007-12-30T11:32:59.953+03:00'),
-};
-
-const bob = {
-    name: 'Bob',
-    dateOfBirth: new Date('2025-02-13T16:05:02.302Z'),
-};
-
-
-const currentDate = new Date('2025-01-20'); // Программа была запущена 20 января 2025
-
-
-alex.age = currentDate.getUTCFullYear() - alex.dateOfBirth.getUTCFullYear();
-if (
-    currentDate.getUTCMonth() < alex.dateOfBirth.getUTCMonth() ||
-    (currentDate.getUTCMonth() === alex.dateOfBirth.getUTCMonth() && currentDate.getUTCDate() < alex.dateOfBirth.getUTCDate())
-) {
-    alex.age--;
-}
-if (alex.age < 0) alex.age = 0;
-
-jake.age = currentDate.getUTCFullYear() - jake.dateOfBirth.getUTCFullYear();
-if (
-    currentDate.getUTCMonth() < jake.dateOfBirth.getUTCMonth() ||
-    (currentDate.getUTCMonth() === jake.dateOfBirth.getUTCMonth() && currentDate.getUTCDate() < jake.dateOfBirth.getUTCDate())
-) {
-    jake.age--;
-}
-if (jake.age < 0) jake.age = 0;
-
-john.age = currentDate.getUTCFullYear() - john.dateOfBirth.getUTCFullYear();
-if (
-    currentDate.getUTCMonth() < john.dateOfBirth.getUTCMonth() ||
-    (currentDate.getUTCMonth() === john.dateOfBirth.getUTCMonth() && currentDate.getUTCDate() < john.dateOfBirth.getUTCDate())
-) {
-    john.age--;
-}
-if (john.age < 0) john.age = 0;  // Проверка для John
-
-bob.age = currentDate.getUTCFullYear() - bob.dateOfBirth.getUTCFullYear();
-if (
-    currentDate.getUTCMonth() < bob.dateOfBirth.getUTCMonth() ||
-    (currentDate.getUTCMonth() === bob.dateOfBirth.getUTCMonth() && currentDate.getUTCDate() < bob.dateOfBirth.getUTCDate())
-) {
-    bob.age--;
-}
-if (bob.age < 0) bob.age = 0;  // Проверка для Bob
-
-// Выводим результаты
-console.log(alex);
-console.log(jake);
-console.log(john);
-console.log(bob);
+// const numbers = [-9007199254740991, 10, 20, 30, 9007199254740991];
+//
+// let min = Infinity;
+// let max = -Infinity;
+// let sum = 0;
+//
+// for (let num of numbers) {
+//     if (num < min) {
+//         min = num;
+//     }
+//     if (num > max) {
+//         max = num;
+//     }
+//     sum += num;
+// }
+//
+// const average = sum / numbers.length;
+//
+// console.log(`Минимальное значение: ${min}`);
+// console.log(`Максимальное значение: ${max}`);
+// console.log(`Среднее значение: ${average}`);
