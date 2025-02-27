@@ -1,139 +1,4 @@
-// //while 1
-//
-// let firstNum = Math.round(Math.random() * 6);
-// let secondNum = Math.round(Math.random() * 6);
-// let count = 0;
-// while (firstNum > secondNum || firstNum < secondNum) {
-//     console.log(`Первое число: ${firstNum} Второе число: ${secondNum}`);
-//     firstNum = Math.round(Math.random() * 6);
-//     secondNum = Math.round(Math.random() * 6);
-//     ++count;
-// }
-// console.log(`ДУБЛЬ ${firstNum}, ${secondNum}`);
-// console.log(`Попыток: ${count}`);
-
-// for 1
-//
-// let numbers = [1, -2, 3, -4, 5, 6];
-// let positiveCount = 0;
-// let negativeCount = 0;
-//
-// for (let i = 0; i < numbers.length; i++) {
-//     if (numbers[i] > 0) {
-//         positiveCount++;
-//     } else if (numbers[i] < 0) {
-//         negativeCount++;
-//     }
-// }
-// console.log(`Количество положительных чисел: ${positiveCount}`);
-// console.log(`Количество отрицательных чисел: ${negativeCount}`);
-
-// for 2
-// let numbers = [1.1, 2.2, -2, 3.3, -1, 5.5, 5.99, 7.49, 7.9999, -2.2];
-// let positiveIndices = [];
-// for (let i = 0; i < numbers.length; i++) {
-//     if (numbers[i] > 0) {
-//         positiveIndices.push(i);
-//     }
-// }
-// for (let i = 0; i < positiveIndices.length - 3; i++) {
-//     let index = positiveIndices[i];
-//     numbers[index] = Math.round(numbers[index]);
-// }
-// console.log(numbers);
-
-// for 3
-// let strings = ['яблоко', 'грушв', 'ручка', 'книга', 'колесо'];
-// let start = Math.floor(strings.length / 2);
-// let secondHalf = strings.slice(start);
-// console.log(secondHalf);
-
-// for 4
-// for (let i = 1; i <= 5; i++) {
-//     let space = ' '.repeat(5 - i);
-//     let star = '*'.repeat(2 * i - 1);
-//     console.log(space + star);
-// }
-
-// for 5
-// const matrix = [
-//     ['Id', 'Title', 'Description'],
-//     [1, 'Title-1', 'Description-1'],
-//     [2, 'Title-2', 'Description-2'],
-//     [3, 'Title-3', 'Description-3', 'Поле с багом'],
-//     [4, 'Title-4', 'Description-4'],
-//     [5, 'Title-5', 'Description-5'],
-//     [6, 'Title-6', 'Description-6', 'Поле с багом'],
-// ];
-//
-// let maxLength = 0;
-// for (let i = 0; i < matrix.length; i++) {
-//     if (matrix[i].length > maxLength) {
-//         maxLength = matrix[i].length;
-//     }
-// }
-//
-// for (let i = 0; i < matrix.length; i++) {
-//     let row = '';
-//     for (let j = 0; j < maxLength; j++) {
-//         let value = matrix[i][j] !== undefined ? matrix[i][j] : '';
-//         row += `${value}\t`;
-//     }
-//     console.log(row);
-// }
-
-//Подглядел
-// const size = potatoes.length;
-// const varieties = [];
-// let resultSum = null;
-// let resultPotatoes = [];
-// let resultDifference = null;
-// let resultVariety = null;
-//
-// /* Решение
-// Для каждого вложенного цикла используем текущий индекс верхнего цикла, в таком случае,
-// если первый цикл взял 1ую картошку, то второй цикл возьмёт 2ую картошку, а третий цикл возьмёт 3ю картошку,
-// и таким образом нам не нужно руками контролировать, чтобы в каждую переменную записалась разная картошка.
-//  */
-// for (let idx1 = 0; idx1 < size; idx1++) {
-//     const potato1 = potatoes[idx1];
-//
-//     for (let idx2 = idx1 + 1; idx2 < size; idx2++) {
-//         const potato2 = potatoes[idx2];
-//
-//         for (let idx3 = idx2 + 1; idx3 < size; idx3++) {
-//             const potato3 = potatoes[idx3];
-//
-//             // Вес для этих 3х картошек
-//             const sum = potato1.weight + potato2.weight + potato3.weight;
-//
-//             // Точность для этих 3х картошек
-//             const difference = Math.abs(sum - targetWeight);
-//
-//             // Если результата ещё нет, или погрешность этих 3х картошек меньше запомненной - обновляем запомненные данные
-//             if (resultDifference === null || difference < resultDifference) {
-//                 resultSum = sum;
-//                 resultDifference = difference;
-//                 resultPotatoes = [potato1, potato2, potato3];
-//             }
-//         }
-//     }
-// }
-//
-// // Перебираем выбранные картошки и ищем превалирующий сорт
-// for (let i = 0; i < resultPotatoes.length; i++) {
-//     const variety = potatoes[i].variety;
-//
-//     if (varieties.includes(variety)) {
-//         // В массиве уже есть одна картошка такого сорта, значит эта вторая, значит этот сорт "победил"
-//         resultVariety = variety;
-//         break;
-//     }
-//
-//     varieties.push(variety);
-// }
-
-
+//1
 // const numbers = [-9007199254740991, 10, 20, 30, 9007199254740991];
 //
 // let min = Infinity;
@@ -155,3 +20,238 @@
 // console.log(`Минимальное значение: ${min}`);
 // console.log(`Максимальное значение: ${max}`);
 // console.log(`Среднее значение: ${average}`);
+
+
+//2
+// let countVowels = 0;
+// let countConsonants = 0;
+// let word = 'слова';
+//
+// const vowels = ['а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е'];
+//
+// for (let i = 0; i < word.length; i++) {
+//     let letter = word.at(i);
+//
+//     let isVowel = false;
+//     for (let vowel of vowels) {
+//         if (vowel === letter) {
+//             countVowels++;
+//             isVowel = true;
+//             break;
+//         }
+//     }
+//
+//     if (!isVowel) {
+//         countConsonants++;
+//     }
+// }
+//
+// console.log(`Итоговое количество гласных: ${countVowels}`);
+// console.log(`Итоговое количество согласных: ${countConsonants}`);
+
+
+//3
+// const array1 = [];
+// const array2 = [];
+//
+// if (array1.length !== array2.length) {
+//     console.log(false);
+// } else {
+//     const sortedArray1 = array1.sort();
+//     const sortedArray2 = array2.sort();
+//
+//     let result = true;
+//
+//     // Сравниваем отсортированные массивы
+//     for (let i = 0; i < sortedArray1.length; i++) {
+//         if (sortedArray1[i] !== sortedArray2[i]) {
+//             result = false;
+//             break;
+//         }
+//     }
+//
+//     console.log(result);
+// }
+
+
+//4
+// const users = [
+//     { name: 'Alice', age: 25 },
+//     { name: 'Bob', age: 30 },
+//     { name: 'Charlie', age: 25 },
+//     { name: 'Diana', age: 35 },
+//     { name: 'Eve', age: 30 },
+//     { name: 'Frank', age: 28 },
+//     { name: 'Grace', age: 25 },
+//     { name: 'Hannah', age: 41 },
+//     { name: 'Ivy', age: 30 },
+//     { name: 'Jack', age: 28 },
+// ];
+//
+// const counter = {};
+//
+// for (const user of users) {
+//     if (counter[user.age]) {
+//         counter[user.age]++;
+//     } else {
+//         counter[user.age] = 1;
+//     }
+// }
+//
+// for (const age in counter) {
+//     console.log(`Возраст=${age}. Количество людей=${counter[age]}`);
+// }
+
+
+//5
+// const mary = {
+//     name: 'Mary',
+//     wantApples: 2,
+// };
+//
+// const alex = {
+//     name: 'Alex',
+//     wantApples: 1,
+// };
+//
+// const mike = {
+//     name: 'Mike',
+//     wantApples: 5,
+// };
+//
+// const brown = {
+//     name: 'Brown',
+//     wantApples: 4,
+// };
+//
+// const people = [mary, alex, mike, brown];
+// const apples = 11;
+//
+// const happy = [];
+// const notHappy = [];
+//
+// for (const person of people) {
+//     const share = Math.floor(apples / people.length);
+//     person.eaten = share;
+//     person.isHappy = person.eaten >= person.wantApples;
+//
+//     if (person.isHappy) {
+//         happy.push(person);
+//     } else {
+//         notHappy.push(person);
+//     }
+//
+// }
+//
+// console.log(happy);
+// console.log(notHappy);
+
+
+//6
+// const alice = {
+//     name: 'Alice',
+//     age: 10,
+//     illness: null,
+//     driverLicenses: ['B'],
+// };
+//
+// const bob = {
+//     name: 'Bob',
+//     age: 18,
+//     illness: 'Cold',
+//     driverLicenses: ['B'],
+// };
+//
+// const charlie = {
+//     name: 'Charlie',
+//     age: 17,
+//     illness: null,
+//     driverLicenses: ['C', 'E'],
+// };
+//
+// const diana = {
+//     name: 'Diana',
+//     age: 22,
+//     illness: 'H. Disease',
+//     driverLicenses: ['A', 'C', 'D'],
+// };
+//
+// const eve = {
+//     name: 'Eve',
+//     age: 35,
+//     illness: null,
+//     driverLicenses: ['A', 'B', 'E'],
+// };
+//
+// const frank = {
+//     name: 'Frank',
+//     age: 37,
+//     illness: null,
+//     driverLicenses: [],
+// };
+//
+// const gorge = {
+//     name: 'Gorge',
+//     age: 28,
+//     illness: null,
+//     driverLicenses: ['B', 'D'],
+// };
+//
+// const persons = [alice, bob, charlie, diana, eve, frank, gorge];
+//
+// const invalidPersons = [];
+// const validPersons = [];
+//
+// // Переписанный код
+// for (const person of persons) {
+//     if (person.age >= 18 && person.illness === null && person.driverLicenses.includes('B')) {
+//         validPersons.push(person);
+//     } else {
+//         const invalidPerson = {
+//             name: person.name,
+//             age: person.age,
+//             illness: person.illness,
+//             driverLicenses: person.driverLicenses,
+//         };
+//
+//         if (person.age < 18) {
+//             invalidPerson.reason = 'Молодой';
+//         } else if (person.illness !== null) {
+//             invalidPerson.reason = 'Болен';
+//         } else {
+//             invalidPerson.reason = 'Нет прав';
+//         }
+//
+//         invalidPersons.push(invalidPerson);
+//     }
+// }
+//
+// console.log('Для трюка подходят:', validPersons);
+// console.log('\nДля трюка НЕ подходят:', invalidPersons);
+
+
+
+
+//for in 1
+// const person = { age: 10, name: 'Bob', child: 'Max' };
+//
+// for (const key in person) {
+//     console.log(`${key}: ${person[key]}`);
+// }
+
+//for in 2
+// const person = { age: 10, name: '', child: 'Max' };
+//
+// const keysArray = [];
+// const valuesArray = [];
+//
+// for (const key in person) {
+//     keysArray.push(key);
+//     valuesArray.push(person[key]);
+// }
+//
+// console.log('Ключи:', keysArray);
+// console.log('Значения:', valuesArray);
+
+
+
