@@ -6,3 +6,4 @@
 .idea
 .npmrc
 .env
+node_modules
