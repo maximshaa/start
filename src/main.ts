@@ -1,217 +1,98 @@
 // 1
-// type A = {
-//   age?: number | string;
-//   nick: string | number;
-//   info: number[] | { id: number } | string[] | {};
-//   photo?: string | null;
+// type User = {
+//   id: number;
+//   name: string;
+//   email?: string | null;
 // };
 //
-// const a1: A = {
-//   age: 10,
-//   nick: 'mynick',
-//   info: [1, 100],
-//   photo: 'string',
+// const profile1: User = {
+//   id: 1,
+//   name: 'Alice',
 // };
 //
-// const a2: A = {
-//   age: '10 years',
-//   nick: '',
-//   info: { id: 100 },
-//   photo: null,
+// const profile2: User = {
+//   id: 2,
+//   name: 'Bob',
+//   email: null,
 // };
 //
-// const a3: A = {
-//   nick: '       ',
-//   info: ['secret', 'key'],
+// const profile3: User = {
+//   id: 3,
+//   name: 'Charlie',
+//   email: '',
 // };
 //
-// const a4: A = {
-//   nick: '',
-//   info: {},
+// const profile4: User = {
+//   id: 4,
+//   name: 'David',
+//   email: 'david123@gmail.com',
 // };
+//
+// const email1 = profile1.email ?? 'не обнаружено';
+// const result1 = email1 || 'пусто';
+// console.log(result1);
+//
+// const email2 = profile2.email ?? 'не обнаружено';
+// const result2 = email2 || 'пусто';
+// console.log(result2);
+//
+// const email3 = profile3.email ?? 'не обнаружено';
+// const result3 = email3 || 'пусто';
+// console.log(result3);
+//
+// const email4 = profile4.email ?? 'не обнаружено';
+// const result4 = email4 || 'пусто';
+// console.log(result4);
 
 // 2
-// type A = {
-//   first: string;
-//   second: {
-//     third: string;
-//     fourth?: string;
-//     fifth: {
-//       sixth?: {
-//         tenth: {
-//           twelfth?: {
-//             thirteenth: {
-//               fifteenth: {
-//                 sixteenth?: {
-//                   last: 'Достучались';
-//                 };
-//               };
-//             };
-//             fourteenth: string;
-//           };
-//         };
-//         eleventh: string;
-//       };
-//       seventh: number;
-//       eight: string;
-//     };
-//   };
-// };
+// function GreatestIntegerDivisor(num: number): number {
+//   if (num === 1) return 1;
 //
-// const a: A = {
-//   first: 'z',
-//   second: {
-//     third: 'f',
-//     fourth: 'a',
-//     fifth: {
-//       sixth: {
-//         tenth: {
-//           twelfth: {
-//             thirteenth: {
-//               fifteenth: {
-//                 sixteenth: {
-//                   last: 'Достучались',
-//                 },
-//               },
-//             },
-//             fourteenth: 's',
-//           },
-//         },
-//         eleventh: 'kk',
-//       },
-//       seventh: 8,
-//       eight: 'b',
-//     },
-//   },
-// };
-// const lastValue = a.second.fifth.sixth?.tenth.twelfth?.thirteenth.fifteenth.sixteenth?.last;
-// console.log(lastValue?.toUpperCase());
-
-// 3
-// import chalk from 'chalk';
-//
-// let result: string = '';
-//
-// for (let i: number = 1; i <= 10; i++) {
-//   let color: string;
-//   if (i % 3 === 1) {
-//     color = chalk.red('*');
-//   } else if (i % 3 === 2) {
-//     color = chalk.green('*');
-//   } else {
-//     color = chalk.blue('*');
+//   for (let i = Math.floor(num / 2); i >= 1; i--) {
+//     if (num % i === 0) {
+//       return i;
+//     }
 //   }
-//
-//   result += color;
-//   if (i < 10) {
-//     result += ' - ';
-//   }
-// }
-// console.log(result);
-
-// 4
-// type Fruit = 'apple' | 'banana' | 'orange' | 'grape' | 'strawberry';
-
-// 5
-// type Month = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-
-// 6
-// type Fruit = 'apple' | 'banana' | 'orange' | 'grape' | 'strawberry';
-//
-// type Month = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-//
-// type FruitAndMonth = {
-//   fruit: Fruit;
-//   month: Month;
-// };
-//
-// const alliance: FruitAndMonth = {
-//   fruit: 'apple',
-//   month: 3,
-// };
-//
-// console.log(alliance);
-
-// ПОДСМОТРЕЛ
-/*
-1ая группа: 12,2,9,5
-2ая группа: 4,6,10,8
-3я группа: 3,7,11,1
-*/
-
-// import dayjs from 'dayjs';
-//
-// console.log(12, dayjs('2024-08-23T12:30:00Z').toISOString());
-// console.log(2, dayjs('2024-08-23T15:30:00+03:00').toISOString());
-// console.log(5, dayjs('2024-08-24T01:30:00+13:00').toISOString());
-// console.log(9, dayjs('2024-08-23T09:30:00-03:00').toISOString());
-// console.log('----\n');
-//
-// console.log(4, dayjs('2024-08-23T15:30:00Z').toISOString());
-// console.log(6, dayjs('2024-08-23T17:30:00+02:00').toISOString());
-// console.log(10, dayjs('2024-08-23T14:30:00-01:00').toISOString());
-// console.log(8, dayjs('2024-08-23T03:30:00-12:00').toISOString());
-// console.log('----\n');
-//
-// console.log(1, dayjs('2024-08-23T03:30:00-11:00').toISOString());
-// console.log(3, dayjs('2024-08-23T14:30:00Z').toISOString());
-// console.log(7, dayjs('2024-08-23T10:30:00-04:00').toISOString());
-// console.log(11, dayjs('2024-08-24T02:30:00+12:00').toISOString());
-
-// 7
-// enum Colors {
-//   Red = 'red',
-//   Green = 'blue',
-//   Blue = 'pink',
-//   Yellow = 'yellow',
+//   return 1;
 // }
 //
-// const colorValues = Object.values(Colors);
-// console.log(colorValues);
-
-// 8
-// import { faker } from '@faker-js/faker';
-// import chalk from 'chalk';
-//
-// const user = {
-//   firstName: chalk.red(faker.person.firstName()),
-//   lastName: chalk.green(faker.person.lastName()),
-//   email: chalk.blue(faker.internet.email()),
-//   phoneNumber: chalk.yellow(faker.phone.number()),
-//   address: chalk.cyan(faker.location.streetAddress()),
-//   city: chalk.magenta(faker.location.city()),
-//   country: chalk.white(faker.location.country()),
-// };
-//
-// console.log(user);
-
-// 9
-// import { faker } from '@faker-js/faker';
-//
-// enum Colors {
-//   Red = 'red',
-//   Green = 'blue',
-//   Blue = 'pink',
-//   Yellow = 'yellow',
+// function printGreatestDivisors(numbers: number[]): void {
+//   numbers.forEach((num) => {
+//     const greatestDivisor = GreatestIntegerDivisor(num);
+//     console.log(`${num} - ${greatestDivisor}`);
+//   });
 // }
 //
-// type User = {
-//   id: string;
-//   name: string;
-//   email: string;
-//   favoriteColor: Colors;
+// const numbers = [1, 5, 11, 12, 21, 61, 85, 123];
+// printGreatestDivisors(numbers);
+
+// function sumObjectValues(obj: Record<string, number>): number {
+//   return Object.values(obj).reduce((sum, value) => sum + value, 0);
+// }
+//
+// // Пример использования
+// const obj1 = {
+//   a: 10,
+//   b: 20,
+//   c: 30,
 // };
 //
-// const users: User[] = Array.from({ length: 10 }, () => ({
-//   id: faker.string.uuid(),
-//   name: faker.person.fullName(),
-//   email: faker.internet.email(),
-//   favoriteColor: faker.helpers.enumValue(Colors), // Рандомный цвет из enum
-// }));
+// const obj2 = {
+//   x: 5,
+//   y: 15,
+// };
 //
-// const randomColor = faker.helpers.enumValue(Colors);
+// const obj3 = {
+//   p: 100,
+//   q: 200,
+//   r: 300,
+// };
 //
-// const usersWithFavoriteColor = users.filter((user) => user.favoriteColor === randomColor);
+// const obj4 = {
+//   f: 42,
+// };
 //
-// console.log(`Пользователи, у которых любимый цвет ${randomColor}:`);
-// console.log(usersWithFavoriteColor);
+// console.log(sumObjectValues(obj1));
+// console.log(sumObjectValues(obj2));
+// console.log(sumObjectValues(obj3));
+// console.log(sumObjectValues(obj4));
